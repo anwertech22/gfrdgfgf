@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SocialBoost</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com "></script>
+
+  <!-- Load Tailwind with RTL support -->
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          sans: ['Tajawal', 'sans-serif']
+        }
+      },
+      plugins: [tailwind.plugins.forms],
+      corePlugins: {
+        preflight: false,
+      }
+    }
+  </script>
+
+  <!-- Google Font Arabic (Tajawal) -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal :wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      @apply text-gray-800 bg-white;
+    }
+
+    a {
+      @apply no-underline;
+    }
+
+    .hover\:underline:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      scroll-margin-top: 6rem;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">SocialBoost</h1>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="#services" class="hover:underline">الخدمات</a>
+        <a href="#pricing" class="hover:underline">التسعير</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-50 to-purple-50 py-20 text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+        خدمات زيادة المتابعين والمشاهدات
+      </h2>
+      <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+        أسعار تنافسية ونتائج مضمونة على TikTok, Instagram, Facebook & Telegram.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-12">منصاتنا</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+          <div class="text-4xl mb-4">🎵</div>
+          <h4 class="text-xl font-bold mb-3">TikTok</h4>
+          <p class="text-sm text-gray-600">زيادة المتابعين، المشاهدات، اللايكات بجودة عالية.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+          <div class="text-4xl mb-4">📸</div>
+          <h4 class="text-xl font-bold mb-3">Instagram</h4>
+          <p class="text-sm text-gray-600">زيادة المتابعين، اللايكات، والمشاهدات بشكل آمن.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+          <div class="text-4xl mb-4">📘</div>
+          <h4 class="text-xl font-bold mb-3">Facebook</h4>
+          <p class="text-sm text-gray-600">زيادة المتابعين، اللايكات، والمشاركات لصفحاتك.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+          <div class="text-4xl mb-4">💬</div>
+          <h4 class="text-xl font-bold mb-3">Telegram</h4>
+          <p class="text-sm text-gray-600">زيادة المشتركين والمشاهدات في القنوات والمجموعات.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-12">أسعار الخدمات</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="bg-purple-600 text-white px-6 py-4">
+            <h4 class="text-xl font-bold">TikTok</h4>
+          </div>
+          <ul class="divide-y divide-gray-200">
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 متابع</span><span class="font-semibold text-purple-600">$5</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>5000 متابع</span><span class="font-semibold text-purple-600">$20</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>10000 متابع</span><span class="font-semibold text-purple-600">$35</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 مشاهدة فيديو</span><span class="font-semibold text-purple-600">$3</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 لايك</span><span class="font-semibold text-purple-600">$2.5</span></li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="bg-purple-600 text-white px-6 py-4">
+            <h4 class="text-xl font-bold">Instagram</h4>
+          </div>
+          <ul class="divide-y divide-gray-200">
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 متابع</span><span class="font-semibold text-purple-600">$6</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>5000 متابع</span><span class="font-semibold text-purple-600">$25</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>10000 متابع</span><span class="font-semibold text-purple-600">$45</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 لايك</span><span class="font-semibold text-purple-600">$3</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 مشاهدة ستوري</span><span class="font-semibold text-purple-600">$2.5</span></li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="bg-purple-600 text-white px-6 py-4">
+            <h4 class="text-xl font-bold">Facebook</h4>
+          </div>
+          <ul class="divide-y divide-gray-200">
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 متابع</span><span class="font-semibold text-purple-600">$5.5</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>5000 متابع</span><span class="font-semibold text-purple-600">$22</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>10000 متابع</span><span class="font-semibold text-purple-600">$40</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 لايك</span><span class="font-semibold text-purple-600">$3</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 مشاركة</span><span class="font-semibold text-purple-600">$4</span></li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="bg-purple-600 text-white px-6 py-4">
+            <h4 class="text-xl font-bold">Telegram</h4>
+          </div>
+          <ul class="divide-y divide-gray-200">
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 مشترك</span><span class="font-semibold text-purple-600">$4</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>5000 مشترك</span><span class="font-semibold text-purple-600">$18</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>10000 مشترك</span><span class="font-semibold text-purple-600">$32</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 مشاهدة</span><span class="font-semibold text-purple-600">$2</span></li>
+            <li class="flex justify-between items-center px-6 py-3"><span>1000 تعليق</span><span class="font-semibold text-purple-600">$3.5</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Request Service Button -->
+  <section class="py-20 bg-white text-center">
+    <div class="container mx-auto px-4">
+      <h3 class="text-2xl md:text-3xl font-bold mb-6">هل تحب ما تراه؟ ابدأ الآن!</h3>
+      <p class="text-gray-600 mb-8 max-w-xl mx-auto">يمكنك طلب أي خدمة مباشرة عبر تيليجرام من خلال الضغط على الزر أدناه.</p>
+      <a href="https://t.me/socialmedia_sale " target="_blank" rel="noopener noreferrer"
+         class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full shadow-lg transform transition hover:scale-105">
+        💬 اطلب الخدمة على تيليجرام
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2025 SocialBoost. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
