@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>لوحة التحكم - SocialBoost</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap " rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: #f7fafc;
+      padding: 2rem;
+      color: #2d3748;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .platform {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 0.75rem;
+      text-align: right;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #cbd5e0;
+      border-radius: 4px;
+    }
+
+    button {
+      display: block;
+      margin: 2rem auto 0;
+      padding: 0.75rem 2rem;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 9999px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+      color: #3b82f6;
+    }
+  </style>
+</head>
+<body>
+
+<h2>تعديل أسعار الخدمات</h2>
+
+<div id="admin-panel"></div>
+<button onclick="saveData()">💾 حفظ الأسعار</button>
+<a href="index.html">🏠 العودة للموقع</a>
+
+<script src="script.js"></script>
+<script>
+  const prices = loadPrices();
+
+  function renderAdminPanel() {
+    const panel = document.getElementById('admin-panel');
+    panel.innerHTML = '';
+
+    for (const [platform, services] of Object.entries(prices)) {
+      let html = `
+        <div class="platform">
+          <h3 class="text-xl font-bold mb-2">${platform}</h3>
+          <table>
+            <tr><th>الخدمة</th><th>السعر</th></tr>
+      `;
+
+      services.forEach((service, i) => {
+        html += `
+          <tr>
+            <td>${service.name}</td>
+            <td><input type="text" data-platform="${platform}" data-index="${i}" value="${service.price}"></td>
+          </tr>
+        `;
+      });
+
+      html += `</table></div>`;
+      panel.innerHTML += html;
+    }
+  }
+
+  function saveData() {
+    const inputs = document.querySelectorAll('input');
+    const updated = {...prices};
+
+    inputs.forEach(input => {
+      const platform = input.getAttribute('data-platform');
+      const index = parseInt(input.getAttribute('data-index'));
+      updated[platform][index].price = input.value;
+    });
+
+    savePrices(updated);
+    alert("✅ تم حفظ التعديلات بنجاح!");
+  }
+
+  window.onload = () => renderAdminPanel();
+</script>
+
+</body>
+</html>
